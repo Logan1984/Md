@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="generator" content="ReText 4.1.0">
+<title>guida_jenkins</title>
+</head>
+<body>
+<h1>Configurazione Ambiente per testing C.I. con Jenkins ,server Appium ,Cucumber-Jvm,Applicazioni mobile, con repositories Git.</h1>
+<p>Con il seguente documento vogliamo aiutare chi si avvicina al mondo del testing C.I(continuous integration) con le applicazioni mobile.
+Di seguito i software e i framework che utilizzeremo:</p>
+<ul>
+<li><a href="http://jenkins-ci.org/">Jenkins</a> </li>
+<li><a href="http://cukes.info/">Cucumber</a></li>
+<li><a href="http://appium.io/">Appium</a></li>
+</ul>
+<p>Una delle applicazioni più utilizzate nel mondo del C.I. è <a href="http://jenkins-ci.org/">Jenkins</a></p>
+<h2>Installare <em>Jenkins</em></h2>
+<p>E' possibile installare Jenkins sia in modo nativo
+sia come applicativo .war. (Al link iniziale <em>Jenkins</em> c'è un tutorial molto esaustivo)</p>
+<p>Una volta installato jenkins bisogna creare le utenze e configurarlo.</p>
+<p>Iniziamo con l'aggiungere a Jenkins i plugin che servono.</p>
+<p>Cliccare su configura Jenkins(per chi ha le versione inglese andare sulla voce di menù corrispettiva figura sottostante)</p>
+<p><img alt="Configurazione Job" src="file:///home/nicola/Immagini/Schermata%20del%202014-03-17%2014:19:58.png" title="Configurazione Job"></p>
+<p>Nella pagina che si ottiene cliccare su gestisci plugin come nella figura seguente</p>
+<p><img alt="Configurazione Job" src="file:///home/nicola/Immagini/Schermata%20del%202014-03-17%2014:19:58.png" title="Configurazione Job"></p>
+<p>nell'attuale pagina clicca su aggiornamenti disponibili e cercare gli aggiornamenti a cui siamo interessati, selezioniamoli e installiamoli.</p>
+<p>Gli aggiornamenti che noi abbiamo installato sono i seguenti:</p>
+<ul>
+<li>Android Emulator Plugin</li>
+<li>Credentials Plugin</li>
+<li>Cucumber Plugin</li>
+<li>Git Server </li>
+<li>GitHub</li>
+<li>GIT Client</li>
+<li>GIT Plugin</li>
+<li>Gradle Plugin</li>
+<li>Redmine plugin</li>
+<li>SSH Slaves plugin(se si vogliono utilizzare macchine in slave)</li>
+<li>Xvnc plugin</li>
+<li>SSH Credentials Plugin</li>
+<li>Matrix Authorization Plugin</li>
+</ul>
+<p>alla fine ne saranno di più perchè alcuni hanno dipendenze da altri.
+(se lavoriamo sotto proxy non dimentichiamo di configurarlo)</p>
+<p>Dopo aver installato i plugin c'è una voce che permette il riavvio automatico di jenkins selezioniamola e jenkins sarà riavviato</p>
+<p>Dopo aver riavviato Jenkins aggiungiamo le utenze, 
+cliccando sulla voce <em>Configure Global Security</em>,
+nella nuova pagina selezioniamo Enable security e decidiamo come autenticarci noi ambiamo fatto come di seguito:</p>
+<p><img alt="Configurazione Job" src="file:///home/nicola/Immagini/Schermata%20del%202014-03-17%2014:19:58.png" title="Configurazione Job"></p>
+<p><strong><span style="color:red"> Non dimentichiamo di settare i permessi e le password</span></strong></p>
+<p>Dopo aver aggiunto e settato le nuove utenze configuriamo l'ambiente Jenkins; settando le variabili globali, il path del sdk android, Xvnc, Git, Gradle, Maven, ecc di seguito un esempio della nostra configuralzione:</p>
+<p><img alt="Configurazione Job" src="file:///home/nicola/Immagini/Schermata%20del%202014-03-17%2014:19:58.png" title="Configurazione Job"></p>
+<p>una volta configurato l'ambiente passiamo a configurare i job.</p>
+<h1>Configurazione Jenkins Jobs</h1>
+<hr>
+<p>Loggarsi inserendo <em><strong>Username</strong></em> e <em><strong>Password</strong></em></p>
+<p>Cliccare su <em><strong>Nuovo Job</strong></em></p>
+<p>Selezionare il tipo di Job che si vuole creare, dargli un nome e premere <strong>OK</strong></p>
+<p>esempio:
+<img alt="Configurazione Job" src="file:///home/nicola/Immagini/Schermata%20del%202014-03-17%2014:19:58.png" title="Configurazione Job"></p>
+</body>
+</html>
